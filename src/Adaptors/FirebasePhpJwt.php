@@ -38,7 +38,7 @@ class FirebasePhpJwt implements Adaptor
         return self::parseKeySet($keys);
     }
 
-    public function decode($jwt, $keys): Jwt
+    public function decode($jwt, $keys)
     {
         $decoded = (array)\Firebase\JWT\JWT::decode($jwt, $keys, ['RS256']);
         return (new Jwt($jwt, $decoded));
